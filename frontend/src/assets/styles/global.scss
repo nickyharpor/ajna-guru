@@ -1,0 +1,47 @@
+@import 'reset';
+
+:root {
+  font-family: $font-family-text;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 300;
+  direction: ltr;
+  overflow: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  @include box(dark, light);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ffffff2e;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ffffff3b;
+}
+
+::selection {
+  @include box(primary, light);
+}
+
+body {
+  overflow: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  min-height: 100vh;
+}

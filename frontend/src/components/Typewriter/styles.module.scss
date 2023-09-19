@@ -1,0 +1,90 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  padding: 25px;
+  user-select: none;
+
+  @include maxMini {
+    padding: 25px 10px;
+    position: relative;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  text-align: center;
+  gap: 5px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 42px;
+  @include text(secondary);
+
+  @include maxMini {
+    font-size: 20px;
+    line-height: 36px;
+  }
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  margin-inline: -25px;
+  @include box(secondary, dark);
+  padding-inline: 10px;
+  border-radius: 5px;
+
+  @include maxMini {
+    font-size: 16px;
+    line-height: 28px;
+    margin-inline: -5px;
+  }
+}
+
+.text {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 36px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  position: relative;
+  @include text(light);
+  text-align: center;
+
+  @include maxMini {
+    position: absolute;
+    transform: translateY(100%);
+    bottom: 0;
+    font-size: 12px;
+    line-height: 24px;
+    min-height: 24px;
+    max-width: calc(100% - 30px);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    top: 2px;
+    bottom: 2px;
+    width: 2px;
+    border-radius: 2px;
+    @include bg(secondary);
+
+    @include maxMini {
+      content: none;
+    }
+  }
+}

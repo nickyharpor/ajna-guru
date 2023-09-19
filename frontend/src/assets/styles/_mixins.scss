@@ -1,0 +1,68 @@
+@mixin bg($color) {
+  background-color: colorize($color);
+}
+@mixin text($color) {
+  color: colorize($color);
+}
+@mixin box($bg, $text) {
+  background-color: colorize($bg);
+  color: colorize($text);
+}
+@mixin bc($color) {
+  border-color: colorize($color);
+}
+@mixin fill($color) {
+  fill: colorize($color);
+}
+@mixin border($size: 1px, $style: solid, $color) {
+  border: $size $style colorize($color);
+}
+// Breakpoint Mixins
+
+@mixin onMini {
+  @media only screen and (max-width: #{$small-width - 0.01px}) {
+    @content;
+  }
+}
+@mixin onSmall {
+  @media only screen and (min-width: #{$small-width}) and (max-width: #{$medium-width - 0.01px}) {
+    @content;
+  }
+}
+@mixin onMedium {
+  @media only screen and (min-width: #{$medium-width}) and (max-width: #{$large-width - 0.01px}) {
+    @content;
+  }
+}
+@mixin onLarge {
+  @media only screen and (min-width: #{$large-width}) {
+    @content;
+  }
+}
+
+@mixin minSmall {
+  @media only screen and (min-width: #{$small-width}) {
+    @content;
+  }
+}
+@mixin minMedium {
+  @media only screen and (min-width: #{$medium-width}) {
+    @content;
+  }
+}
+
+@mixin maxMini {
+  @media only screen and (max-width: #{$small-width - 0.01px}) {
+    @content;
+  }
+}
+@mixin maxSmall {
+  @media only screen and (max-width: #{$medium-width - 0.01px}) {
+    @content;
+  }
+}
+@mixin maxMedium {
+  @media only screen and (max-width: #{$large-width - 0.01px}) {
+    @content;
+  }
+}

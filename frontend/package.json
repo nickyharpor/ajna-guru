@@ -1,0 +1,67 @@
+{
+  "name": "crypto-ajna",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "A notification platform for Akash",
+  "keywords": [
+    "akash",
+    "crypto",
+    "notification"
+  ],
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:OriginalRoOhi/crypto-ajna.git"
+  },
+  "contributors": [
+    {
+      "name": "RoOhi",
+      "email": "roohi.emami@gmail.com",
+      "url": "https://github.com/OriginalRoOhi"
+    }
+  ],
+  "config": {},
+  "scripts": {
+    "dev": "vite",
+    "dev:force": "vite --force",
+    "build": "tsc && vite build",
+    "lint": "eslint --format=pretty .",
+    "preview": "vite preview",
+    "icons": "svgo --config svgo.config.cjs --folder src/assets/icons --output src/assets/icons",
+    "icons:type": "ls src/assets/icons --quoting-style=shell-always -m | sed -e \"s/.svg//g; s/,/|/g\" > src/components/Icon/tmp.txt | sed -e \"/ICONS/r src/components/Icon/tmp.txt\" -i -e \"s///\" src/@types/icon.d.ts && prettier --write \"src/@types/icon.d.ts\" && rm src/components/Icon/tmp.txt"
+  },
+  "dependencies": {
+    "@akashnetwork/akashjs": "^0.4.18",
+    "@cosmjs/proto-signing": "^0.31.1",
+    "@cosmjs/stargate": "^0.31.1",
+    "axios": "^1.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.15.0",
+    "react-toastify": "^9.1.3"
+  },
+  "devDependencies": {
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
+    "@keplr-wallet/types": "^0.12.22",
+    "@types/node": "^20.5.1",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-formatter-pretty": "^5.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "prettier": "^3.0.2",
+    "sass": "^1.66.1",
+    "svgo": "^3.0.2",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-svgr": "^3.2.0"
+  }
+}

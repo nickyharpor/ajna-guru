@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  svg {
+    cursor: pointer;
+  }
+
+  .telegram {
+    display: flex;
+  }
+}

@@ -1,0 +1,12 @@
+@function colorize($value) {
+  $result: map-get(
+    $map: $color,
+    $key: $value
+  );
+
+  @if $result {
+    @return $result;
+  } @else {
+    @return map-get($map: $color, $key: default);
+  }
+}

@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  position: relative;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  background-color: transparentize($color: colorize(light), $amount: 0.85);
+  padding: 50px 20px;
+  margin-inline: auto;
+  margin-block: 25px 0;
+
+  .akash {
+    max-width: 250px;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      display: flex;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 100;
+      padding-inline: 10px;
+      position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 5px;
+        bottom: 5px;
+        width: 1px;
+        @include bg(secondary);
+      }
+
+      &:last-child {
+        &::after {
+          content: none;
+        }
+      }
+      a {
+        padding-inline: 5px;
+      }
+    }
+  }
+}

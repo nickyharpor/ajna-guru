@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  input {
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 40px;
+    letter-spacing: 1px;
+    height: inherit;
+    // background-color: transparentize($color: colorize(light), $amount: 0.75);
+    @include box(transparent, light);
+    @include border($color: success);
+    border-radius: 5px;
+    padding-inline: 15px;
+    width: 200px;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    padding-inline: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 300;
+    height: 40px;
+    transition: all ease 0.3s;
+    @include border($color: success);
+    @include box(transparent, success);
+
+    svg {
+      fill: colorize(success);
+    }
+
+    &:hover {
+      background-color: transparentize(
+        $color: colorize(success),
+        $amount: 0.85
+      );
+    }
+
+    &:disabled {
+      cursor: default;
+      opacity: 0.5;
+
+      &:hover {
+        @include box(transparent, success);
+      }
+    }
+  }
+}

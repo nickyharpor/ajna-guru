@@ -1,0 +1,8 @@
+.eslintrc.json
+vite.config.ts
+svgo.config.cjs
+/node_modules
+/build
+/dist
+/.yarn
+/.vscode

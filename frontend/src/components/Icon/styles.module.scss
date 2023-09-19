@@ -1,0 +1,21 @@
+.icon {
+  user-select: none;
+}
+
+.error,
+.loading {
+  border-radius: 5px;
+}
+.error {
+  @include fill(error);
+}
+.loading {
+  @include fill(light);
+  opacity: 0.5;
+}
+
+@each $colorName, $colorHex in $color {
+  .#{$colorName} {
+    @include fill($colorName);
+  }
+}

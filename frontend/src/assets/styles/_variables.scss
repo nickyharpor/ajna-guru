@@ -1,0 +1,43 @@
+$small-width: 720px;
+$medium-width: 1200px;
+$large-width: 1600px;
+
+$font-family-text:
+  'Martian Mono',
+  system-ui,
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  Oxygen,
+  Ubuntu,
+  Cantarell,
+  'Open Sans',
+  'Helvetica Neue',
+  sans-serif;
+$font-family-title:
+  'Arima',
+  system-ui,
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  Oxygen,
+  Ubuntu,
+  Cantarell,
+  'Open Sans',
+  'Helvetica Neue',
+  sans-serif;
+
+$color: (
+  default: transparent,
+  primary: #8d029b,
+  secondary: #ee3967,
+  tertiary: #00cccc,
+  success: #50c878,
+  error: #dc143c,
+  warning: #ffba00,
+  info: #2454ff,
+  dark: #010b13,
+  light: #f0f8ff
+);

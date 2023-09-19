@@ -1,0 +1,218 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 100vmin;
+  overflow: hidden;
+  position: relative;
+  padding-block: 25px;
+  background: linear-gradient(
+    45deg,
+    colorize(dark) 0%,
+    colorize(dark) 29%,
+    colorize(dark) 66%,
+    colorize(primary) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+
+  &::before,
+  &::after {
+    content: '';
+    width: 70vmax;
+    height: 70vmax;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.07);
+    left: -20vmin;
+    top: -20vmin;
+    animation:
+      morph 15s linear infinite alternate,
+      spin 20s linear infinite;
+    z-index: 1;
+    will-change: border-radius, transform;
+    transform-origin: 55% 55%;
+    pointer-events: none;
+  }
+
+  &::after {
+    width: 70vmin;
+    height: 70vmin;
+    left: auto;
+    right: -10vmin;
+    top: auto;
+    bottom: 0;
+    animation:
+      morph 10s linear infinite alternate,
+      spin 26s linear infinite reverse;
+    transform-origin: 20% 20%;
+  }
+
+  @include maxMini {
+    min-height: 100vh;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  padding-inline: 25px;
+  flex: 1;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.logo {
+  display: block;
+  margin-inline: auto;
+  transition: all ease 0.3s;
+  border-radius: 50%;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-block: 20px 0;
+  height: 64px;
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
+  position: relative;
+
+  @include maxMini {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin-block: 15px 0;
+    height: auto;
+    transform: translateY(48px);
+  }
+
+  input {
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 36px;
+    letter-spacing: 1px;
+    flex: 1;
+    height: inherit;
+    // background-color: transparentize($color: colorize(light), $amount: 0.75);
+    @include box(light, dark);
+    border-radius: 5px;
+    padding-inline: 15px;
+
+    @include maxMini {
+      font-size: 12px;
+      line-height: 28px;
+      letter-spacing: 0;
+      padding-inline: 10px;
+      flex: auto;
+      height: 40px;
+    }
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+    padding-inline: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    @include box(secondary, dark);
+    cursor: pointer;
+    transition: all ease 0.3s;
+
+    @include maxMini {
+      font-size: 12px;
+      line-height: 28px;
+      letter-spacing: 0;
+      padding-inline: 10px;
+      flex: auto;
+      height: 40px;
+    }
+
+    &:hover {
+      background-color: darken($color: colorize(secondary), $amount: 10%);
+    }
+
+    &:active {
+      background-color: darken($color: colorize(secondary), $amount: 20%);
+      transform: translateY(2px);
+    }
+  }
+
+  .error {
+    position: absolute;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 32px;
+    @include text(error);
+    bottom: -10px;
+    left: 10px;
+    transform: translateY(100%);
+    z-index: 1;
+
+    @include maxMini {
+      font-size: 12px;
+      line-height: 28px;
+    }
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
+  }
+  100% {
+    border-radius: 40% 60%;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.icon {
+  cursor: pointer;
+  animation: 0.5s ease-in 1s infinite alternate both running move;
+}
+
+@keyframes move {
+  0% {
+    opacity: 0.5;
+    transform: translateY(-5px);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+}

@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  user-select: none;
+
+  & > li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding-inline: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    @include box(dark, light);
+    @include border($color: light);
+    transition: all ease 0.3s;
+
+    &:not(.active):hover {
+      background-color: transparentize(
+        $color: colorize(secondary),
+        $amount: 0.75
+      );
+    }
+
+    &.active {
+      @include box(secondary, dark);
+      @include border($color: secondary);
+      cursor: default;
+    }
+  }
+}
+.loading {
+  & > li {
+    cursor: default;
+    pointer-events: none;
+
+    &:not(.active) {
+      opacity: 0.5;
+
+      &:hover {
+        @include bg(dark);
+      }
+    }
+  }
+}
+.hidden {
+  opacity: 0.25;
+  cursor: default;
+  pointer-events: none;
+
+  &:not(.active):hover {
+    @include bg(dark);
+  }
+}

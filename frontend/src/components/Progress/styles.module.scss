@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  // @include border($color: light);
+  border-radius: 5px;
+  width: 100%;
+  min-width: 100px;
+  height: 36px;
+  overflow: hidden;
+  position: relative;
+  background-color: transparentize($color: colorize(dark), $amount: 0.75);
+}
+
+.progress {
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 10px,
+    transparentize($color: colorize(dark), $amount: 0.9) 10px,
+    transparentize($color: colorize(dark), $amount: 0.9) 20px
+  );
+  transition: all ease 0.3s;
+
+  &:global {
+    &.error {
+      @include bg(error);
+    }
+    &.warning {
+      @include bg(warning);
+    }
+    &.success {
+      @include bg(success);
+    }
+  }
+}
+
+.precent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 12px;
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  text-shadow: 0 0 3px colorize(dark);
+  background-color: transparentize($color: colorize(dark), $amount: 0.75);
+}

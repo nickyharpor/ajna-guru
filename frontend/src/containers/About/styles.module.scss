@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  gap: 10px;
+  min-height: 100vmin;
+  overflow: hidden;
+  position: relative;
+  padding: 50px 25px;
+
+  @include maxMini {
+    min-height: 100vh;
+    padding: 40px 15px;
+  }
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 42px;
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
+  padding-inline: 25px;
+  @include text(secondary);
+
+  @include maxMini {
+    font-size: 20px;
+    line-height: 36px;
+    padding-inline: 10px;
+  }
+}
+
+.text {
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 100;
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
+  padding-inline: 25px;
+
+  @include maxMini {
+    font-size: 14px;
+    line-height: 28px;
+    padding-inline: 10px;
+  }
+}
