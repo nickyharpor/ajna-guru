@@ -22,7 +22,7 @@ const DefaultLayout: React.FC<IFDefault> = () => {
         <ul className={style.links}>
           <li>
             <a
-              href={'https://github.com/nickyharpor/ajna_guru'}
+              href={'https://github.com/nickyharpor/ajna-guru'}
               target={'_blank'}
             >
               Github
@@ -36,7 +36,7 @@ const DefaultLayout: React.FC<IFDefault> = () => {
           <li>
             <a
               href={
-                'https://github.com/nickyharpor/ajna_guru/blob/master/backend/README.md'
+                'https://github.com/nickyharpor/ajna-guru/blob/master/backend/README.md'
               }
               target={'_blank'}
             >
