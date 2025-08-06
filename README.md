@@ -1,5 +1,7 @@
 # Ajna Guru
 
+![logo](logo.svg)
+
 [Ajna Guru](https://ajna.guru) is your third eye on Akash network...
 
 * Manage all your deployments and finances in one place.
@@ -7,10 +9,6 @@
 * Recieve notifications on Telegram (never forget to top up a deployment contract again).
 
 * Automate Akash deployments via APIs.
-
-![logo](logo.svg)
-
-### Ajna Guru is available at https://ajna.guru
 
 ## What does Ajna mean?
 
