@@ -2,7 +2,7 @@
 
 ![logo](logo.svg)
 
-[Ajna Guru](https://ajna.guru) is your third eye on Akash network...
+Ajna Guru is your third eye on Akash network...
 
 * Manage all your deployments and finances in one place.
 
