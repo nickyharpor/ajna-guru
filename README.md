@@ -22,7 +22,7 @@ Ajna Guru's [backend](backend) is written in Java. It's the backbone of communic
 
 ### Frontend
 
-[Frontend](frontend) is a React project. Visit [https://ajna.guru](https://ajna.guru) to have a taste of it. You can connect your wallet and make payments for your deployments. You can also connect your Telegram to the web app and manage your notifications.
+[Frontend](frontend) is a React project. You can connect your wallet and make payments for your deployments. You can also connect your Telegram to the web app and manage your notifications.
 
 ### Bot
 
