@@ -35,3 +35,10 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### AI Code Editors & Extensions ###
+.cursor/
+.windsurf/
+.kodo/
+.continue/
+.aider/
