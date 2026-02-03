@@ -39,6 +39,6 @@ try:
                 bot.send_message(PeerUser(n.get("telegram_id0")),
                                  f'Deployment #{data["dseq"]} has less than 0.25 AKT left!')
 except:
-    print('FUCK')
+    print('Error in sending bot notifications.')
 
 bot.disconnect()
