@@ -10,7 +10,7 @@ async def start_notification(db, bot, telegram_id, address):
             else:
                 db.update('notifications', {'akash_address': address, 'telegram_id': telegram_id},
                           {'$set': {'is_enabled': True}})
-            await bot.send_message(telegram_id, f'You will receive notifications for `{address}`.')
+            await bot.send_message(telegram_id, f'You will receive notification for `{address}`.')
     else:
         await bot.send_message(telegram_id, 'Malformed Akash address.')
 
@@ -27,7 +27,7 @@ async def stop_notification(db, bot, telegram_id, address):
             else:
                 db.update('notifications', {'akash_address': address, 'telegram_id': telegram_id},
                           {'$set': {'is_enabled': False}})
-            await bot.send_message(telegram_id, f'You won\'t receive notifications for `{address}` anymore.')
+            await bot.send_message(telegram_id, f'You won\'t receive notification for `{address}` anymore.')
     else:
         await bot.send_message(telegram_id, 'Malformed Akash address.')
 
@@ -44,7 +44,7 @@ def start_notification_sync(db, bot, telegram_id, address):
             else:
                 db.update('notifications', {'akash_address': address, 'telegram_id': telegram_id},
                           {'$set': {'is_enabled': True}})
-            bot.send_message(telegram_id, f'You will receive notifications for `{address}`.')
+            bot.send_message(telegram_id, f'You will receive notification for `{address}`.')
     else:
         bot.send_message(telegram_id, 'Malformed Akash address.')
 
@@ -61,6 +61,6 @@ def stop_notification_sync(db, bot, telegram_id, address):
             else:
                 db.update('notifications', {'akash_address': address, 'telegram_id': telegram_id},
                           {'$set': {'is_enabled': False}})
-            bot.send_message(telegram_id, f'You won\'t receive notifications for `{address}` anymore.')
+            bot.send_message(telegram_id, f'You won\'t receive notification for `{address}` anymore.')
     else:
         bot.send_message(telegram_id, 'Malformed Akash address.')
