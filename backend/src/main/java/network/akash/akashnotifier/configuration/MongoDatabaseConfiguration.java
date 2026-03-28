@@ -13,6 +13,7 @@ public class MongoDatabaseConfiguration implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() {
+        // configures the MongoDB converter to remove the default _class field by disabling the MongoTypeMapper.
         mappingMongoConverter.setTypeMapper(new DefaultMongoTypeMapper(null));
     }
 }
