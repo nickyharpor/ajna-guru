@@ -13,7 +13,7 @@ export const InitialError: TError = {
     data: {
       status: 'fail',
       code: '500',
-      message: 'There is no connection between you and server now'
+      message: 'There is no connection between you and the server now'
     }
   }
 }
