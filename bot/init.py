@@ -25,8 +25,10 @@ if config.proxy:
 else:
     bot = TelegramClient(session=config.session_name, api_id=config.api_id, api_hash=config.api_hash)
 
+# Start bot
 bot.start(bot_token=config.bot_token)
 
+# Check args
 if len(sys.argv) < 4:
     help_msg = '''
     Ajna Guru's bot sends you notifications when your Akash deployments are about to run out of funds.
@@ -49,5 +51,5 @@ else:
     elif sys.argv[2] == 'stop':
         helper.stop_notification_sync(db, bot, int(sys.argv[1]), sys.argv[3])
 
-print(True)
+# Stop bot
 bot.disconnect()
